@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.js"></script>
+    <style>
+        .page1-vid
+        {
+            width: 350px;
+            height: 200px;
+            background-color:black;
+            margin-left: 25px;
+        }
+        p
+        {
+            font-size: 16px;
+            margin-left: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .sub1
+        {
+            display: flex;
+        }
+        /* Version  2 */
+        .sub2
+        {
+            display: flex;
+        }
+        .mainplayer
+        {
+            width: 80%;
+        }
+        .side
+        {
+            width: 20%;
+        }
+        .page2-mainvid
+        {
+            width: 960px;
+            height: 480px;
+        }
+        .page2-sidevid
+        {
+            width: 250px;
+            height: 150px;
+            
+        }
+        h1
+        {
+            padding: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: red;
+        }
+        img
+        {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1><img src="youtube/logo.png" alt="">Sasti YouTube.com</h1>
+    </div>
+    <div id="version1">
+        <div class="sub1">
+            <div>
+                <video src="youtube/video1.mp4" class="page1-vid page1-video1"></video>
+                <p>Testing Video 1 via Video Tag</p>
+            </div>
+            <div>
+                <video src="youtube/video2.mp4" class="page1-vid page1-video2"></video>
+                <p>Testing Video 2 via Video Tag</p>
+            </div>
+            <div>
+                <video src="youtube/video3.mp4" class="page1-vid page1-video3"></video>
+                <p>Testing Video 3 via Video Tag</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-----VERSION 2----->
+    <div id="version2" style="display: none; position: absolute;">
+        <div class="sub2">
+            <div class="mainplayer">
+                <div>
+                    <video controls autoplay src="youtube/video1.mp4" class="page2-mainvid"></video>
+                    <p>Testing Video 1 via Video Tag</p>
+                </div>
+            </div>
+            <div class="side">
+                <div >
+                    <video src="youtube/video2.mp4" class="page2-sidevid page2-video2"></video>
+                    <p>Testing Video 2 via Video Tag</p>
+                </div>
+                <div>
+                    <video src="youtube/video3.mp4" class="page2-sidevid page2-video3"></video>
+                    <p>Testing Video 3 via Video Tag</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-----VERSION 3----->
+    <div id="version3" style="display: none; position: absolute;">
+        <div class="sub2">
+            <div class="mainplayer">
+                <div>
+                    <video controls autoplay src="youtube/video2.mp4" class="page2-mainvid"></video>
+                    <p>Testing Video 2 via Video Tag</p>
+                </div>
+            </div>
+            <div class="side">
+                <div >
+                    <video src="youtube/video3.mp4" class="page2-sidevid page3-video3"></video>
+                    <p>Testing Video 3 via Video Tag</p>
+                </div>
+                <div>
+                    <video src="youtube/video1.mp4" class="page2-sidevid page3-video1"></video>
+                    <p>Testing Video 1 via Video Tag</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----VERSION 4----->
+    <div id="version4" style="display: none; position: absolute;">
+        <div class="sub2">
+            <div class="mainplayer">
+                <div>
+                    <video controls autoplay src="youtube/video3.mp4" class="page2-mainvid"></video>
+                    <p>Testing Video 3 via Video Tag</p>
+                </div>
+            </div>
+            <div class="side">
+                <div >
+                    <video src="youtube/video2.mp4" class="page2-sidevid page4-video2"></video>
+                    <p>Testing Video 2 via Video Tag</p>
+                </div>
+                <div>
+                    <video src="youtube/video1.mp4" class="page2-sidevid page4-video1"></video>
+                    <p>Testing Video 1 via Video Tag</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('.page1-video1').click(function () {
+                $('#version2').show()
+            });
+            $('.page1-video1').click(function () {
+                $('#version1').hide()
+            });
+            $('.page1-video2').click(function () {
+                $('#version3').show()
+            });
+            $('.page1-video2').click(function () {
+                $('#version1').hide()
+            });
+            $('.page1-video3').click(function () {
+                $('#version4').show()
+            });
+            $('.page1-video3').click(function () {
+                $('#version1').hide()
+            });
+            $('.page2-video2').click(function () {
+                $('#version3').show()
+            });
+            $('.page2-video2').click(function () {
+                $('#version2').hide()
+            });
+            $('.page2-video3').click(function () {
+                $('#version3').show()
+            });
+            $('.page2-video3').click(function () {
+                $('#version2').hide()
+            });
+            $('.page3-video3').click(function () {
+                $('#version4').show()
+            });
+            $('.page3-video3').click(function () {
+                $('#version3').hide()
+            });
+            $('.page3-video1').click(function () {
+                $('#version4').show()
+            });
+            $('.page3-video1').click(function () {
+                $('#version3').hide()
+            });
+            $('.page4-video2').click(function () {
+                $('#version3').show()
+            });
+            $('.page4-video2').click(function () {
+                $('#version4').hide()
+            });
+            $('.page4-video1').click(function () {
+                $('#version2').show()
+            });
+            $('.page4-video1').click(function () {
+                $('#version4').hide()
+            });
+        })
+    </script>
+</body>
+</html>
